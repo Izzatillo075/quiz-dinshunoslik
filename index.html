@@ -116,6 +116,14 @@
       }, 1000);
     }
 
+    function selectCustomUser() {
+    const input = document.getElementById("customName").value.trim();
+    if (input === "") {
+      alert("Enter a name or select one");
+      return;
+    }
+    selectUser(input);
+  }
     // ----------------- views -----------------
     function renderUserPick(){
       state.phase='pickUser';
@@ -134,6 +142,15 @@
         <div class="btnrow">
           <button class="primary" id="btnHum">Humoyunmirzo</button>
           <button class="primary" id="btnIzz">Izzatillo</button>
+          <p style="margin-top:15px;">or enter your name</p>
+<input
+  type="text"
+  id="customName"
+  placeholder="Enter your name"
+  style="padding:8px;width:200px;text-align:center;"
+/>
+<br><br>
+<button onclick="selectCustomUser()">Start Quiz</button>
         </div>
         <div class="hint">Tip: If you open this on a phone, add it to Home Screen for full-screen feel.</div>
       `;
